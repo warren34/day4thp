@@ -1,32 +1,33 @@
 def signup
-    puts "Définis un mot de passe"
-    mdp = gets.chomp.to_i
-    return mdp
+    puts "veuillez entrer votre mot de passe"
+    print"> "
+    psw = gets.chomp.to_i
+    return psw
 end
 
-def login(mdp)
-    puts "Rentre ton mot de passe"
-    mdp_u = gets.chomp.to_i
-    while mdp_u != mdp
-        puts "Ce n'est pas le bon mot de passe chenapan"
-        mdp_u = gets.chomp.to_i
+def login(psw)
+    puts "confirmer votre mot de passe"
+    psw_u = gets.chomp.to_i
+    while psw_u != mdp
+        puts "mot de passe erronee veuillez reesayer"
+        psw_u = gets.chomp.to_i
     end
-    return mdp_u
+    return psw_u
 end
 
-def welcome_screen(mdp_u,mdp)
-    if mdp_u == mdp
-        puts "Bienvenue my friend"    
+def welcome_screen(psw_u,mdp)
+    if psw_u == psw
+        puts "you are welcome futur corsair now you are in the link"    
     end
 end
 
 def perform
 
-    mdp = signup
+    psw = signup
 
-    mdp_u = login(mdp)
+    psw_u = login(psw)
     
-    welcome_screen(mdp_u,mdp)
+    welcome_screen(psw_u,psw)
 end
 
 perform
